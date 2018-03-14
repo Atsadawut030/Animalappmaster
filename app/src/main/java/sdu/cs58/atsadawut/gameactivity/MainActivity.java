@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView questionImageView;
     MediaPlayer mediaPlayer; //เล่นไฟล์เสียง
     ImageButton volumnImageButton;
-    int questionCount = 1; //ตัวแปรเก็บจำนวนข้อคำถาม
+    int questionCount = 10 ; //ตัวแปรเก็บจำนวนข้อคำถาม
     ArrayList<Integer> qID = new ArrayList<Integer>(); //ตัวแปรสุ่มคำถาม เป็นชนิดarray
     String answer;//เก็บคำตอบที่userตอบ
     int score = 0;//ค่าเริ่มต้นที่0<รวมคะแนน>
@@ -63,11 +63,173 @@ public class MainActivity extends AppCompatActivity {
             btn3.setText(choice.remove(0));
             btn4.setText(choice.remove(0));
         }
+
+
+        if (qID == 2) {
+            answer = "แมว";
+            questionImageView.setImageResource(R.drawable.cat);
+            mediaPlayer = MediaPlayer.create(this, R.raw.cat);
+
+            ArrayList<String> choice = new ArrayList<String>();//กำหนดการrandom choice
+            choice.add("แมว");
+            choice.add("ช้าง");
+            choice.add("นก");
+            choice.add("ยุง");
+            Collections.shuffle(choice);//random choice
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+
+        if (qID == 3) {
+            answer = "วัว";
+            questionImageView.setImageResource(R.drawable.cow);
+            mediaPlayer = MediaPlayer.create(this, R.raw.cow);
+
+            ArrayList<String> choice = new ArrayList<String>();//กำหนดการrandom choice
+            choice.add("วัว");
+            choice.add("นก");
+            choice.add("แมว");
+            choice.add("ยุง");
+            Collections.shuffle(choice);//random choice
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+
+        if (qID == 4) {
+            answer = "หมา";
+            questionImageView.setImageResource(R.drawable.dog);
+            mediaPlayer = MediaPlayer.create(this, R.raw.dog);
+
+            ArrayList<String> choice = new ArrayList<String>();//กำหนดการrandom choice
+            choice.add("หมา");
+            choice.add("ช้าง");
+            choice.add("แมว");
+            choice.add("ยุง");
+            Collections.shuffle(choice);//random choice
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+
+        if (qID == 5) {
+            answer = "ช้าง";
+            questionImageView.setImageResource(R.drawable.elephant);
+            mediaPlayer = MediaPlayer.create(this, R.raw.elephant);
+
+            ArrayList<String> choice = new ArrayList<String>();//กำหนดการrandom choice
+            choice.add("ช้าง");
+            choice.add("แมว");
+            choice.add("นก");
+            choice.add("ยุง");
+            Collections.shuffle(choice);//random choice
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+
+        if (qID == 6) {
+            answer = "ม้า";
+            questionImageView.setImageResource(R.drawable.horse);
+            mediaPlayer = MediaPlayer.create(this, R.raw.horse);
+
+            ArrayList<String> choice = new ArrayList<String>();//กำหนดการrandom choice
+            choice.add("ม้า");
+            choice.add("ช้าง");
+            choice.add("ยุง");
+            choice.add("นก");
+            Collections.shuffle(choice);//random choice
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+
+        if (qID == 7) {
+            answer = "สิงโต";
+            questionImageView.setImageResource(R.drawable.lion);
+            mediaPlayer = MediaPlayer.create(this, R.raw.lion);
+
+            ArrayList<String> choice = new ArrayList<String>();//กำหนดการrandom choice
+            choice.add("สิงโต");
+            choice.add("ช้าง");
+            choice.add("แมว");
+            choice.add("วัว");
+            Collections.shuffle(choice);//random choice
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+
+        if (qID == 8) {
+            answer = "ยุง";
+            questionImageView.setImageResource(R.drawable.mosquito);
+            mediaPlayer = MediaPlayer.create(this, R.raw.mosquito);
+
+            ArrayList<String> choice = new ArrayList<String>();//กำหนดการrandom choice
+            choice.add("ยุง");
+            choice.add("หมา");
+            choice.add("แมว");
+            choice.add("ช้าง");
+            Collections.shuffle(choice);//random choice
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+
+        if (qID == 9) {
+            answer = "หมู";
+            questionImageView.setImageResource(R.drawable.pig);
+            mediaPlayer = MediaPlayer.create(this, R.raw.pig);
+
+            ArrayList<String> choice = new ArrayList<String>();//กำหนดการrandom choice
+            choice.add("หมู");
+            choice.add("ยุง");
+            choice.add("แมว");
+            choice.add("หมู");
+            Collections.shuffle(choice);//random choice
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+
+        if (qID == 10) {
+            answer = "แกะ";
+            questionImageView.setImageResource(R.drawable.sheep);
+            mediaPlayer = MediaPlayer.create(this, R.raw.sheep);
+
+            ArrayList<String> choice = new ArrayList<String>();//กำหนดการrandom choice
+            choice.add("แกะ");
+            choice.add("นก");
+            choice.add("ม้า");
+            choice.add("สิงโต");
+            Collections.shuffle(choice);//random choice
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
     }//end setQuestion
     public void choiceAns(View view) {//ตรวจคำตอบ
         Button button = (Button) view;
-        String buttonstring = button.getText().toString(); //รับข้อความบนปุ่มไปไว้ในตัวแปร button string ตามที่ user กด
-        if (buttonstring.equals(answer)){
+        String buttonString = button.getText().toString(); //รับข้อความบนปุ่มไปไว้ในตัวแปร button string ตามที่ user กด
+        if (buttonString.equals(answer)){
             score++;
         }
         if (qID.isEmpty()){//ถ้าทำครบทุกข้อ qID จะเป็นค่าว่าง ให้แสดงคะแนนออกมา
