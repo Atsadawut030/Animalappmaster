@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> qID = new ArrayList<Integer>(); //ตัวแปรสุ่มคำถาม เป็นชนิดarray
     String answer;//เก็บคำตอบที่userตอบ
     int score = 0;//ค่าเริ่มต้นที่0<รวมคะแนน>
+    String getNameString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -229,20 +230,21 @@ public class MainActivity extends AppCompatActivity {
     public void choiceAns(View view) {//ตรวจคำตอบ
         Button button = (Button) view;
         String buttonString = button.getText().toString(); //รับข้อความบนปุ่มไปไว้ในตัวแปร button string ตามที่ user กด
-        if (buttonString.equals(answer)){
+        if (buttonString.equals(answer)){ //เช็คคำตอบ
             score++;
         }
         if (qID.isEmpty()){//ถ้าทำครบทุกข้อ qID จะเป็นค่าว่าง ให้แสดงคะแนนออกมา
-            dialogboxscore(); //method คะแนนรวม
+            getNameString = getIntent().getStringExtra("Name");
+            dialogboxscore(getNameString); //method คะแนนรวม
 
         }else {
             setQuestion(qID.remove(0));
         }
     }//method choiceAns
-    private void dialogboxscore() {
+    private void dialogboxscore(String name) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("สรุปคะแนน");
-        builder.setMessage(" ได้คะแนน " + score + " คะแนน ")
+        builder.setMessage(name + " ได้คะแนน " + score + " คะแนน ")
             .setCancelable(false)
             .setPositiveButton("ออกจากเกม", new DialogInterface.OnClickListener() {
                 @Override
@@ -253,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
                   .setNegativeButton("เล่นอีกครั้ง", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                         Intent intent = getIntent();
+                         Intent intent = getIntent(); //เปิดหน้าเกม
                          finish();
                          startActivity(intent);
 
